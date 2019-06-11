@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="keywords" content="JS����,�������,JS������,JS��Ч����" />
+<meta name="description" content="�˴�������Ϊ���ȵ�èͷӥ��¼���棬����վ�����ô��룬����������������������ͼ��JS����Ƶ����" />
+<title>���ȵ�èͷӥ��¼����_����ͼ��</title>
+<link rel="stylesheet" href="css/lrtk.css">
+</head>
+<body>
+	
+<!-- ���� ��ʼ -->
+<div id="login">
+    <div class="wrapper">
+        <div class="login">
+            <form action="http://www.lanrentuku.com/" method="post" class="container offset1 loginform">
+                <div id="owl-login">
+                    <div class="hand"></div>
+                    <div class="hand hand-r"></div>
+                    <div class="arms">
+                        <div class="arm"></div>
+                        <div class="arm arm-r"></div>
+                    </div>
+                </div>
+                <div class="pad" id="inputForms">
+                    <input type="hidden" name="_csrf" value="9IAtUxV2CatyxHiK2LxzOsT6wtBE6h8BpzOmk=">
+                    <div class="control-group">
+                        <div class="controls forms">
+                            <label for="email" class="control-label fa fa-envelope"></label>
+                            <input id="email" type="email" name="email" placeholder="Email" tabindex="1" autofocus="autofocus" class="form-control input-medium input_Keys">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls forms">
+                            <label for="password" class="control-label fa fa-asterisk"></label>
+                            <input id="password" type="password" name="password" placeholder="Password" tabindex="2" class="form-control input-medium input_Keys">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions"><a href="http://www.lanrentuku.com/" tabindex="5" class="btn pull-left btn-link text-muted">Forgot password?</a><a href="http://www.lanrentuku.com/" tabindex="6" class="btn btn-link text-muted">Sign Up</a>
+                    <button type="submit" tabindex="4" class="btn btn-primary">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+</div>
+<!-- ���� ���� -->
+<div style="text-align:center;margin:200px 0 0 0">
+<p>��Դ��<a href="http://readme.io/" target="_blank">readme.io</a>���������?<a href="http://www.lanrentuku.com/" target="_blank">����ͼ��</a>����л��<a href="http://www.maijiyou.com/site/why" target="_blank">�������</a></p>
+<p>�����������Ͷ��ɹ�ת�����Ծ�ע��������ע���˴������ѧϰ����������������ҵ��;��</p>
+<p></p>
+<p><p>���ȵ�èͷӥ��¼���棬�����������ʱ��èͷӥ���ó����ס˫�ۣ��������������������ͼ���Ƽ����أ�</p><p><br /></p><p>ʹ�÷�����</p><p>1��head���������ļ�lrtk.css��jquery.min.js</p><p>2�����ļ��м���&lt;!-- ���� ��ʼ --&gt;&lt;!-- ���� ���� --&gt;������룬 </p><p>3������images�ļ���, fonts�ļ��С�</p></p>
+<p style="margin:20px 0"></p>
+</div>
+<script src="js/jquery.min.js"></script>
+    <script>
+    $(function() {
+
+        $('#login #password').focus(function() {
+            $('#owl-login').addClass('password');
+        }).blur(function() {
+            $('#owl-login').removeClass('password');
+        });
+    });
+    </script>
+<script>
+(function() {
+    function p() {
+        window.requestAnimFrame(p), a = d(0, 360), s.globalCompositeOperation = "destination-out", s.fillStyle = "rgba(0, 0, 0, 0.5)", s.fillRect(0, 0, e, t), s.globalCompositeOperation = "source-over";
+        var n = u.length;
+        while (n--) u[n].draw(), u[n].update(n)
+    }
+
+    function d(e, t) {
+        return Math.random() * (t - e) + e
+    }
+
+    function v() {
+        i = $('<canvas width="' + e + '" height="' + t + '" />').appendTo(n).css({
+            position: "absolute",
+            left: -20,
+            top: -44,
+            zIndex: 999,
+            pointerEvents: "none"
+        }), s = i[0].getContext("2d"), r = $("<div />").appendTo(n).css({
+            fontSize: "16px",
+            fontFamily: "arial",
+            height: 1,
+            position: "absolute",
+            left: 15,
+            top: 50,
+            zIndex: 0,
+            visibility: "hidden",
+            whiteSpace: "nowrap"
+        })
+    }
+    if (/msie/i.test(navigator.userAgent)) return;
+    var e = 600,
+        t = 100,
+        n = $("#inputForms .forms"),
+        r = null,
+        i = null,
+        s = null,
+        o = !1,
+        u = [],
+        a = 120,
+        f = 8,
+        l = 0,
+        c = 0,
+        h = function(e, t, n) {
+            var r = this;
+            r.x = e, r.y = t, r.dir = n, r.coord = {}, r.angle = d(0, -Math.PI), r.speed = d(2, 8), r.friction = .95, r.gravity = 1, r.hue = d(a - 10, a + 10), r.brightness = d(50, 80), r.alpha = 1, r.decay = d(.03, .05), r.init()
+        };
+    h.prototype = {
+        init: function() {
+            var e = this;
+            e.coord = {
+                x: e.x,
+                y: e.y
+            }
+        },
+        update: function(e) {
+            var t = this;
+            t.coord = {
+                x: t.x,
+                y: t.y
+            }, t.speed *= t.friction, t.x += Math.cos(t.angle) * t.speed + t.dir, t.y += Math.sin(t.angle) * t.speed + t.gravity, t.alpha -= t.decay, t.alpha <= t.decay && u.splice(e, 1)
+        },
+        draw: function() {
+            var e = this;
+            s.fillStyle = "hsla(" + e.hue + ", 100%, " + e.brightness + "%, " + e.alpha + ")", s.beginPath(), s.arc(e.coord.x, e.coord.y, 2, 0, 2 * Math.PI, !0), s.closePath(), s.fill()
+        }
+    }, window.requestAnimFrame = function() {
+        return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || function(e) {
+            window.setTimeout(e, 1e3 / 60)
+        }
+    }(), $(".input_Keys").on("focus", function() {
+        o || (v(), o = !0, p());
+        var e = $(this.form),
+            t = -20,
+            n = -44;
+        i.appendTo(e), e.attr("name") == "f3" && ($("body").hasClass("layout1") ? t = 97 : t = -20), i.css({
+            left: t,
+            top: n
+        })
+    }).on("keydown", function(e) {
+        var t = $(this.form);
+        if (!(this.selectionStart >= 0 && r)) return;
+        var n = this.selectionStart,
+            i = this.value.substring(0, n).replace(/ /g, " "),
+            s = r.html(i).width(),
+            o = 0;
+        i.length > c ? o = -2 : o = 2, c = i.length, s >= 500 && (s = 500);
+        var a = f;
+        while (a--) u.push(new h(s + 50, 60, o));
+        t.css({
+            "-webkit-transform": "translate(-1px, 1px)",
+            "-moz-transform": "translate(-1px, 1px)",
+            "-o-transform": "translate(-1px, 1px)",
+            transform: "translate(-1px, 1px)"
+        }), setTimeout(function() {
+            t.css({
+                "-webkit-transform": "none",
+                "-moz-transform": "none",
+                "-o-transform": "none",
+                transform: "none"
+            })
+        }, 10)
+    })
+})();
+</script>
+
+</body>
+</html>
